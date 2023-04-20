@@ -1,4 +1,8 @@
 package com.example.lacrossestattracker
 
-class LaxViewModel {
+import androidx.lifecycle.ViewModel
+
+class LaxViewModel: ViewModel() {
+    lateinit var teams :MutableList<Team>
+
 }
