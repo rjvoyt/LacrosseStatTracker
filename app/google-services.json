@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "704603690216",
+    "project_id": "lacrosse-stat-tracker",
+    "storage_bucket": "lacrosse-stat-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704603690216:android:3fb98dd6fc47ae14c5e55d",
+        "android_client_info": {
+          "package_name": "com.example.lacrossestattracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704603690216-hm7cb83jod4ghe0m27l696uhihskbuh6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7WFzESXL9khei1eZA8yZPHTu5LpJkrhY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704603690216-hm7cb83jod4ghe0m27l696uhihskbuh6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
