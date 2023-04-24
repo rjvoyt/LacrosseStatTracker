@@ -2,4 +2,5 @@
     <string name="app_name">Lacrosse Stat Tracker</string>
     <string name="getStarted">Get Started</string>
     <string name="title">Lacrosse Stat\nTracker</string>
+    <string name="teamsText">Teams</string>
 </resources>
