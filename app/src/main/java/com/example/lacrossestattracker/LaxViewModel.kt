@@ -17,10 +17,10 @@ class LaxViewModel : ViewModel() {
     private lateinit var _currentPlayer: Player
     val currentPlayer: Player
         get() = _currentPlayer
-    private var _currentPlayerFirstName= ""
+    private var _currentPlayerFirstName = ""
     val currentPlayerFirstName: String
         get() = _currentPlayerFirstName
-    private var _currentPlayerLastName= ""
+    private var _currentPlayerLastName = ""
     val currentPlayerLastName: String
         get() = _currentPlayerLastName
     private var _currentPlayerNumber = 0
@@ -35,4 +35,7 @@ class LaxViewModel : ViewModel() {
     private var _currentPlayerAssists = 0
     val currentPlayerAssists: Int
         get() = _currentPlayerAssists
+    private var _currentPlayerSaves = 0
+    val currentPlayerSaves: Int
+        get() = _currentPlayerSaves
 }
