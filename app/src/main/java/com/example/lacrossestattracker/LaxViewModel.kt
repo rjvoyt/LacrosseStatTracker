@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel
 
 
 class LaxViewModel : ViewModel() {
-    private lateinit var teams: MutableList<Team>
+    private lateinit var _teams: MutableList<Team>
+    val teams: MutableList<Team>
+        get() = _teams
     private lateinit var _currentTeam: Team
     val currentTeam: Team
         get() = _currentTeam

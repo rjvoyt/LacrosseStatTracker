@@ -3,4 +3,7 @@
     <string name="getStarted">Get Started</string>
     <string name="title">Lacrosse Stat\nTracker</string>
     <string name="teamsText">Teams</string>
+    <string name="playersText">Players</string>
+    <string name="addTeam">Add Team</string>
+    <string name="addPlayer">Add Player</string>
 </resources>
