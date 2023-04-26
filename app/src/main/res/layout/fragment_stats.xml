@@ -90,24 +90,30 @@
         app:layout_constraintTop_toBottomOf="@+id/goalsText">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/minusButtonGoals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/minus"
+            android:textSize="34sp"
+            app:backgroundTint="@color/blue2"
+            android:textColor="@color/black"/>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/goalsNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="0"/>
+            tools:text="0"
+            android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/plusButtonGoals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/plus"
+            app:backgroundTint="@color/blue2"
+            android:textColor="@color/black"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
