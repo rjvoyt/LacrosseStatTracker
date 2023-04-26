@@ -25,7 +25,7 @@
         android:id="@+id/getStartedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/getStarted"
+        android:text="@string/get_started"
         app:backgroundTint="@color/blue2"
         app:layout_constraintBottom_toTopOf="@+id/sticksImage"
         app:layout_constraintEnd_toEndOf="parent"
