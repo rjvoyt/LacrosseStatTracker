@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/groundballsText"
+        android:id="@+id/groundBallsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ground_balls"
@@ -63,9 +63,9 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/groundballsText"
-        app:layout_constraintStart_toStartOf="@+id/groundballsText"
-        app:layout_constraintTop_toBottomOf="@+id/groundballsText" />
+        app:layout_constraintEnd_toEndOf="@+id/groundBallsText"
+        app:layout_constraintStart_toStartOf="@+id/groundBallsText"
+        app:layout_constraintTop_toBottomOf="@+id/groundBallsText" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -91,29 +91,158 @@
 
         <Button
             android:id="@+id/minusButtonGoals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:text="@string/minus"
-            android:textSize="34sp"
-            app:backgroundTint="@color/blue2"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:backgroundTint="@color/blue2" />
 
         <TextView
             android:id="@+id/goalsNum"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             tools:text="0"
-            android:textColor="@color/black"/>
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"/>
 
         <Button
             android:id="@+id/plusButtonGoals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/plus"
-            app:backgroundTint="@color/blue2"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:backgroundTint="@color/blue2" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/groundBallsText"
+        app:layout_constraintStart_toStartOf="@+id/groundBallsText"
+        app:layout_constraintTop_toBottomOf="@+id/groundBallsText">
+
+        <Button
+            android:id="@+id/minusButtonGroundBalls"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="@string/minus"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:backgroundTint="@color/blue2" />
+
+        <TextView
+            android:id="@+id/groundBallsNum"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            tools:text="0"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"/>
+
+        <Button
+            android:id="@+id/plusButtonGroundBalls"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/plus"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:backgroundTint="@color/blue2" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/assistsText"
+        app:layout_constraintStart_toStartOf="@+id/assistsText"
+        app:layout_constraintTop_toBottomOf="@+id/assistsText">
+
+        <Button
+            android:id="@+id/minusButtonAssists"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="@string/minus"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:backgroundTint="@color/blue2" />
+
+        <TextView
+            android:id="@+id/assistsNum"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            tools:text="0"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"/>
+
+        <Button
+            android:id="@+id/plusButtonAssists"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/plus"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:backgroundTint="@color/blue2" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/savesText"
+        app:layout_constraintStart_toStartOf="@+id/savesText"
+        app:layout_constraintTop_toBottomOf="@+id/savesText">
+
+        <Button
+            android:id="@+id/minusButtonSaves"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="@string/minus"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:backgroundTint="@color/blue2" />
+
+        <TextView
+            android:id="@+id/savesNum"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            tools:text="0"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"/>
+
+        <Button
+            android:id="@+id/plusButtonSaves"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/plus"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:backgroundTint="@color/blue2" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
