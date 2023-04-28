@@ -40,4 +40,10 @@ class LaxViewModel : ViewModel() {
     private var _currentPlayerSaves = 0
     val currentPlayerSaves: Int
         get() = _currentPlayerSaves
+    fun addTeam(team: Team){
+        _teams.add(team)
+    }
+    fun addPlayertoCurrentTeam(player: Player){
+        _currentTeam.players.add(player)
+    }
 }
