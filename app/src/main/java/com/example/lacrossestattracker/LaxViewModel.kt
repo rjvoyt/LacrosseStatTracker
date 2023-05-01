@@ -10,40 +10,49 @@ class LaxViewModel : ViewModel() {
     private lateinit var _currentTeam: Team
     val currentTeam: Team
         get() = _currentTeam
-    private lateinit var _currentTeamName: String
     val currentTeamName: String
-        get() = _currentTeamName
-    private lateinit var _currentPlayerList: MutableList<Player>
+        get() = _currentTeam.teamName
     val currentPlayerList: MutableList<Player>
-        get() = _currentPlayerList
+        get() = _currentTeam.players
     private lateinit var _currentPlayer: Player
     val currentPlayer: Player
         get() = _currentPlayer
-    private var _currentPlayerFirstName = ""
     val currentPlayerFirstName: String
-        get() = _currentPlayerFirstName
-    private var _currentPlayerLastName = ""
+        get() = _currentPlayer.firstName
     val currentPlayerLastName: String
-        get() = _currentPlayerLastName
-    private var _currentPlayerNumber = 0
+        get() = _currentPlayer.lastName
     val currentPlayerNumber: Int
-        get() = _currentPlayerNumber
-    private var _currentPlayerGoals = 0
+        get() = _currentPlayer.number
     val currentPlayerGoals: Int
-        get() = _currentPlayerGoals
-    private var _currentPlayerGroundBalls = 0
+        get() = _currentPlayer.goals
     val currentPlayerGroundBalls: Int
-        get() = _currentPlayerGroundBalls
-    private var _currentPlayerAssists = 0
+        get() = _currentPlayer.groundBalls
     val currentPlayerAssists: Int
-        get() = _currentPlayerAssists
-    private var _currentPlayerSaves = 0
+        get() = _currentPlayer.assists
     val currentPlayerSaves: Int
-        get() = _currentPlayerSaves
+        get() = _currentPlayer.saves
     fun addTeam(team: Team){
         _teams.add(team)
     }
     fun addPlayertoCurrentTeam(player: Player){
         _currentTeam.players.add(player)
+    }
+    fun editGoal(edit:Int){
+        _teams[_teams.indexOf(_currentTeam)].players[_currentTeam.players.indexOf(_currentPlayer)].goals+= edit
+    }
+    fun editAssist(edit:Int){
+        _teams[_teams.indexOf(_currentTeam)].players[_currentTeam.players.indexOf(_currentPlayer)].assists+= edit
+    }
+    fun editGroundBall(edit:Int){
+        _teams[_teams.indexOf(_currentTeam)].players[_currentTeam.players.indexOf(_currentPlayer)].groundBalls+= edit
+    }
+    fun editSave(edit:Int){
+        _teams[_teams.indexOf(_currentTeam)].players[_currentTeam.players.indexOf(_currentPlayer)].saves+= edit
+    }
+    fun setCurrentTeam(team: Team){
+        _currentTeam = team
+    }
+    fun setCurrentPlayer(player: Player){
+        _currentPlayer = player
     }
 }
