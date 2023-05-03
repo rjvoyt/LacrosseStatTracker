@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TeamFragment"
+    android:id="@+id/team_fragment"
     android:background="@color/blue1">
 
 

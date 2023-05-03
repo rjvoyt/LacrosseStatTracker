@@ -7,24 +7,25 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/imageViewPeopleIcon"
+        android:id="@+id/imageViewPersonIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:src="@drawable/ic_baseline_people"
+        tools:src="@drawable/ic_baseline_person"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/teamNameTextView"
+        android:id="@+id/playerNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
+        android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/imageViewPeopleIcon"
+        app:layout_constraintLeft_toRightOf="@id/imageViewPersonIcon"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Team Name" />
+        app:layout_constraintBottom_toTopOf="@id/playerNumberTextView"
+        tools:text="Player Name" />
 
     <TextView
         android:id="@+id/textView"
@@ -33,6 +34,18 @@
         android:layout_marginTop="16dp"
         android:background="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/teamNameTextView" />
+        app:layout_constraintTop_toBottomOf="@id/playerNumberTextView" />
+
+    <TextView
+        android:id="@+id/playerNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/playerNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
