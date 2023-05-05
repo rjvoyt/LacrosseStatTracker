@@ -13,7 +13,7 @@ class PlayersViewHolder(val binding: ListPlayerLayoutBinding) : RecyclerView.Vie
             binding.root.findNavController().navigate(action)
         }
     }
-    fun bindTeam(player: Player) {
+    fun bindPlayer(player: Player) {
         currentPlayer = player
         binding.playerNameTextView.text = "${currentPlayer.firstName} ${currentPlayer.lastName}"
         binding.playerNumberTextView.text = "#${currentPlayer.number}"

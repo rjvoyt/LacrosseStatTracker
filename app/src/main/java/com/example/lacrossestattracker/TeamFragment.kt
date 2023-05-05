@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.lacrossestattracker.databinding.FragmentTeamBinding
+import androidx.fragment.app.viewModels
 
 
 class TeamFragment : Fragment() {
@@ -17,6 +18,11 @@ class TeamFragment : Fragment() {
     ): View? {
         _binding = FragmentTeamBinding.inflate(inflater, container, false)
         val rootView = binding.root
+        val viewModel: LaxViewModel by viewModels()
+        binding.addTeamButton.setOnClickListener {
+            val mAdapter = TeamsAdapter(viewModel.teams)
+            binding.teamsRecyclerView.adapter = mAdapter
+        }
         return rootView
     }
 
