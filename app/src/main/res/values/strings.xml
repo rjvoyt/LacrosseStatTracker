@@ -18,4 +18,5 @@
     <string name="team_name">Team Name</string>
     <string name="cancel">CANCEL</string>
     <string name="add">ADD</string>
+    <string name="must_enter">MUST ENTER A NAME</string>
 </resources>
