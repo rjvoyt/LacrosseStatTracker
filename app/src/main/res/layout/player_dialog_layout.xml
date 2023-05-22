@@ -37,12 +37,24 @@
         />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/numberTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/number"
         android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPlayerLastName" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBaseline_toBaselineOf="@+id/numberTextView"
+        app:layout_constraintStart_toEndOf="@+id/numberTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

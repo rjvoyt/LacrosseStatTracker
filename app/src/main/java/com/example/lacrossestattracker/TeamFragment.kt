@@ -24,7 +24,8 @@ class TeamFragment : Fragment() {
         _binding = FragmentTeamBinding.inflate(inflater, container, false)
         val rootView = binding.root
         val viewModel: LaxViewModel by viewModels()
-        lateinit var mAdapter: TeamsAdapter
+        var mAdapter = TeamsAdapter(viewModel.teams)
+        binding.teamsRecyclerView.adapter = mAdapter
         binding.addTeamButton.setOnClickListener {
             val dialogView =
                 LayoutInflater.from(requireContext()).inflate(R.layout.team_dialog_layout, null)
