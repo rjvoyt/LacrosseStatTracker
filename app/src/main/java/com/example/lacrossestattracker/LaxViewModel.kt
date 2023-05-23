@@ -35,7 +35,7 @@ class LaxViewModel : ViewModel() {
         _teams.add(team)
     }
     fun addPlayertoCurrentTeam(player: Player){
-        _currentTeam.players.add(player)
+        _teams[_teams.indexOf(_currentTeam)].players.add(player)
     }
     fun editGoal(edit:Int){
         _teams[_teams.indexOf(_currentTeam)].players[_currentTeam.players.indexOf(_currentPlayer)].goals+= edit

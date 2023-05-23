@@ -8,6 +8,7 @@ class TeamsViewHolder(val binding: ListTeamLayoutBinding) : RecyclerView.ViewHol
     private lateinit var currentTeam: Team
     init {
         binding.root.setOnClickListener {
+            TeamFragment
             val action = TeamFragmentDirections.actionTeamFragmentToPlayersFragment()
             binding.root.findNavController().navigate(action)
         }

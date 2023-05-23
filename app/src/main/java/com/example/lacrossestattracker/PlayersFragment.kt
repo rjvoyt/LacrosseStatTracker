@@ -21,8 +21,8 @@ class PlayersFragment : Fragment() {
         _binding = FragmentPlayersBinding.inflate(inflater, container, false)
         val rootView = binding.root
         val viewModel: LaxViewModel by viewModels()
-        var mAdapter = PlayersAdapter(viewModel.currentPlayerList)
-        binding.playersRecyclerView.adapter = mAdapter
+//        var mAdapter = PlayersAdapter(viewModel.currentPlayerList)
+//        binding.playersRecyclerView.adapter = mAdapter
         binding.addPlayerButton.setOnClickListener {
             val dialogView =
                 LayoutInflater.from(requireContext()).inflate(R.layout.player_dialog_layout, null)
@@ -44,24 +44,24 @@ class PlayersFragment : Fragment() {
                                         0, 0, 0, 0
                                     )
                                 )
-                                mAdapter = PlayersAdapter(viewModel.currentPlayerList)
-                                binding.playersRecyclerView.adapter = mAdapter
+//                                mAdapter = PlayersAdapter(viewModel.currentPlayerList)
+//                                binding.playersRecyclerView.adapter = mAdapter
                             } else {
                                 Toast.makeText(
                                     requireContext(),
-                                    R.string.must_enter,
+                                    R.string.must_enter2,
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
                         } else {
                             Toast.makeText(
                                 requireContext(),
-                                R.string.must_enter,
+                                R.string.must_enter2,
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
                     } else {
-                        Toast.makeText(requireContext(), R.string.must_enter, Toast.LENGTH_SHORT)
+                        Toast.makeText(requireContext(), R.string.must_enter2, Toast.LENGTH_SHORT)
                             .show()
                     }
                 }.show()

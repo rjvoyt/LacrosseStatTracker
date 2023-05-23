@@ -1,8 +1,6 @@
 package com.example.lacrossestattracker
 
-import android.app.AlertDialog
 import android.os.Bundle
-import android.text.Layout
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +9,6 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.lacrossestattracker.databinding.FragmentTeamBinding
 import androidx.fragment.app.viewModels
-import com.example.lacrossestattracker.databinding.TeamDialogLayoutBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class TeamFragment : Fragment() {
@@ -52,5 +49,8 @@ class TeamFragment : Fragment() {
         }
         return rootView
     }
-
+    fun setCurrentTeam(team: Team){
+        val viewModel: LaxViewModel by viewModels()
+        viewModel.setCurrentTeam(team)
+    }
 }
