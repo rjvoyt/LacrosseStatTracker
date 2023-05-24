@@ -2,6 +2,8 @@ package com.example.lacrossestattracker
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lacrossestattracker.databinding.ListTeamLayoutBinding
 
@@ -14,6 +16,8 @@ class TeamsAdapter(val teamList: List<Team>): RecyclerView.Adapter<TeamsViewHold
     override fun onBindViewHolder(holder: TeamsViewHolder, position: Int) {
         val currentTeam = teamList[position]
         holder.bindTeam(currentTeam)
+
+        }
     }
 
     override fun getItemCount(): Int {

@@ -49,8 +49,4 @@ class TeamFragment : Fragment() {
         }
         return rootView
     }
-    fun setCurrentTeam(team: Team){
-        val viewModel: LaxViewModel by viewModels()
-        viewModel.setCurrentTeam(team)
-    }
 }
