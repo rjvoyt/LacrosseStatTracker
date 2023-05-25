@@ -15,9 +15,7 @@ class TeamsAdapter(val teamList: List<Team>): RecyclerView.Adapter<TeamsViewHold
 
     override fun onBindViewHolder(holder: TeamsViewHolder, position: Int) {
         val currentTeam = teamList[position]
-        holder.bindTeam(currentTeam)
-
-        }
+        holder.bindTeam(currentTeam, position)
     }
 
     override fun getItemCount(): Int {

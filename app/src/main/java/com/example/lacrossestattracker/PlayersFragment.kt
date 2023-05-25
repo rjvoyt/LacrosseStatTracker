@@ -21,8 +21,10 @@ class PlayersFragment : Fragment() {
         _binding = FragmentPlayersBinding.inflate(inflater, container, false)
         val rootView = binding.root
         val viewModel: LaxViewModel by viewModels()
-//        var mAdapter = PlayersAdapter(viewModel.currentPlayerList)
-//        binding.playersRecyclerView.adapter = mAdapter
+        val args = PlayersFragmentArgs.fromBundle(requireArguments())
+        viewModel.setCurrentTeam(args.position)
+        //var mAdapter = PlayersAdapter(viewModel.currentPlayerList)
+        //binding.playersRecyclerView.adapter = mAdapter
         binding.addPlayerButton.setOnClickListener {
             val dialogView =
                 LayoutInflater.from(requireContext()).inflate(R.layout.player_dialog_layout, null)
