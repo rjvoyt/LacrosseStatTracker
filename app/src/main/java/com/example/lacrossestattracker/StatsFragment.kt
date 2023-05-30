@@ -5,20 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import com.example.lacrossestattracker.databinding.FragmentStatsBinding
 
 
 class StatsFragment : Fragment() {
     private var _binding: FragmentStatsBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: LaxViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentStatsBinding.inflate(inflater, container, false)
         val rootView = binding.root
-        val viewModel: LaxViewModel by viewModels()
+        val args = StatsFragmentArgs.fromBundle(requireArguments())
+        viewModel.setCurrentPlayer(viewModel.currentTeam.players[args.position])
         binding.assistsNum.text = viewModel.currentPlayerAssists.toString()
         binding.goalsNum.text = viewModel.currentPlayerGoals.toString()
         binding.groundBallsNum.text = viewModel.currentPlayerGroundBalls.toString()
@@ -28,7 +30,8 @@ class StatsFragment : Fragment() {
             binding.goalsNum.text = viewModel.currentPlayerGoals.toString()
         }
         binding.minusButtonGoals.setOnClickListener {
-            viewModel.editGoal(-1)
+            if (viewModel.currentPlayerGoals > 0)
+                viewModel.editGoal(-1)
             binding.goalsNum.text = viewModel.currentPlayerGoals.toString()
         }
         binding.plusButtonAssists.setOnClickListener {
@@ -36,7 +39,8 @@ class StatsFragment : Fragment() {
             binding.assistsNum.text = viewModel.currentPlayerAssists.toString()
         }
         binding.minusButtonAssists.setOnClickListener {
-            viewModel.editAssist(-1)
+            if (viewModel.currentPlayerAssists > 0)
+                viewModel.editAssist(-1)
             binding.assistsNum.text = viewModel.currentPlayerAssists.toString()
         }
         binding.plusButtonGroundBalls.setOnClickListener {
@@ -44,7 +48,8 @@ class StatsFragment : Fragment() {
             binding.groundBallsNum.text = viewModel.currentPlayerGroundBalls.toString()
         }
         binding.minusButtonGroundBalls.setOnClickListener {
-            viewModel.editGroundBall(-1)
+            if (viewModel.currentPlayerGroundBalls > 0)
+                viewModel.editGroundBall(-1)
             binding.groundBallsNum.text = viewModel.currentPlayerGroundBalls.toString()
         }
         binding.plusButtonSaves.setOnClickListener {
@@ -52,7 +57,8 @@ class StatsFragment : Fragment() {
             binding.savesNum.text = viewModel.currentPlayerSaves.toString()
         }
         binding.minusButtonSaves.setOnClickListener {
-            viewModel.editSave(-1)
+            if (viewModel.currentPlayerSaves > 0)
+                viewModel.editSave(-1)
             binding.savesNum.text = viewModel.currentPlayerSaves.toString()
         }
         return rootView

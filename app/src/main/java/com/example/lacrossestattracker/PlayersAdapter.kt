@@ -13,7 +13,7 @@ class PlayersAdapter(val playerList: List<Player>): RecyclerView.Adapter<Players
 
     override fun onBindViewHolder(holder: PlayersViewHolder, position: Int) {
         val currentPlayer = playerList[position]
-        holder.bindPlayer(currentPlayer)
+        holder.bindPlayer(currentPlayer, position)
     }
 
     override fun getItemCount(): Int {

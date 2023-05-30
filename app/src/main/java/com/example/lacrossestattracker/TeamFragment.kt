@@ -9,7 +9,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.lacrossestattracker.databinding.FragmentTeamBinding
-import androidx.fragment.app.viewModels
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class TeamFragment : Fragment() {
@@ -42,7 +41,6 @@ class TeamFragment : Fragment() {
                         )
                         mAdapter = TeamsAdapter(viewModel.teams)
                         binding.teamsRecyclerView.adapter = mAdapter
-                        binding.teamsText.text = viewModel.teams.size.toString()
                     } else {
                         Toast.makeText(requireContext(), R.string.must_enter, Toast.LENGTH_SHORT)
                             .show()

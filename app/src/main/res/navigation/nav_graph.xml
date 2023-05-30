@@ -39,5 +39,9 @@
         android:id="@+id/statsFragment"
         android:name="com.example.lacrossestattracker.StatsFragment"
         android:label="fragment_stats"
-        tools:layout="@layout/fragment_stats" />
+        tools:layout="@layout/fragment_stats" >
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
 </navigation>

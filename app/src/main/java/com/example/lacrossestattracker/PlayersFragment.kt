@@ -9,7 +9,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.lacrossestattracker.databinding.FragmentPlayersBinding
-import androidx.fragment.app.viewModels
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class PlayersFragment : Fragment() {
@@ -23,10 +22,9 @@ class PlayersFragment : Fragment() {
         _binding = FragmentPlayersBinding.inflate(inflater, container, false)
         val rootView = binding.root
         val args = PlayersFragmentArgs.fromBundle(requireArguments())
-        viewModel.setCurrentTeam(args.position)
-        binding.playersText.text = viewModel.teams.size.toString()
-        //var mAdapter = PlayersAdapter(viewModel.currentPlayerList)
-        //binding.playersRecyclerView.adapter = mAdapter
+        viewModel.setCurrentTeam(viewModel.teams[args.position])
+        var mAdapter = PlayersAdapter(viewModel.currentPlayerList)
+        binding.playersRecyclerView.adapter = mAdapter
         binding.addPlayerButton.setOnClickListener {
             val dialogView =
                 LayoutInflater.from(requireContext()).inflate(R.layout.player_dialog_layout, null)
@@ -48,8 +46,8 @@ class PlayersFragment : Fragment() {
                                         0, 0, 0, 0
                                     )
                                 )
-//                                mAdapter = PlayersAdapter(viewModel.currentPlayerList)
-//                                binding.playersRecyclerView.adapter = mAdapter
+                                mAdapter = PlayersAdapter(viewModel.currentPlayerList)
+                                binding.playersRecyclerView.adapter = mAdapter
                             } else {
                                 Toast.makeText(
                                     requireContext(),

@@ -7,13 +7,13 @@ class LaxViewModel : ViewModel() {
     private var _teams = mutableListOf<Team>()
     val teams: MutableList<Team>
         get() = _teams
-    private var _currentTeamIndex = 0
-    val currentTeamIndex: Int
-        get() = _currentTeamIndex
+    private lateinit var _currentTeam: Team
+    val currentTeam: Team
+        get() = _currentTeam
     val currentTeamName: String
-        get() = _teams[_currentTeamIndex].teamName
+        get() = _currentTeam.teamName
     val currentPlayerList: MutableList<Player>
-        get() = _teams[_currentTeamIndex].players
+        get() = _currentTeam.players
     private lateinit var _currentPlayer: Player
     val currentPlayer: Player
         get() = _currentPlayer
@@ -35,22 +35,22 @@ class LaxViewModel : ViewModel() {
         _teams.add(team)
     }
     fun addPlayertoCurrentTeam(player: Player){
-        _teams[_currentTeamIndex].players.add(player)
+        _currentTeam.players.add(player)
     }
     fun editGoal(edit:Int){
-        _teams[_currentTeamIndex].players[_teams[_currentTeamIndex].players.indexOf(_currentPlayer)].goals+= edit
+        _currentTeam.players[_currentTeam.players.indexOf(_currentPlayer)].goals+= edit
     }
     fun editAssist(edit:Int){
-        _teams[_currentTeamIndex].players[_teams[_currentTeamIndex].players.indexOf(_currentPlayer)].assists+= edit
+        _currentTeam.players[_currentTeam.players.indexOf(_currentPlayer)].assists+= edit
     }
     fun editGroundBall(edit:Int){
-        _teams[_currentTeamIndex].players[_teams[_currentTeamIndex].players.indexOf(_currentPlayer)].groundBalls+= edit
+        _currentTeam.players[_currentTeam.players.indexOf(_currentPlayer)].groundBalls+= edit
     }
     fun editSave(edit:Int){
-        _teams[_currentTeamIndex].players[_teams[_currentTeamIndex].players.indexOf(_currentPlayer)].saves+= edit
+        _currentTeam.players[_currentTeam.players.indexOf(_currentPlayer)].saves+= edit
     }
-    fun setCurrentTeam(position:Int){
-        _currentTeamIndex = position
+    fun setCurrentTeam(team: Team){
+        _currentTeam = team
     }
     fun setCurrentPlayer(player: Player){
         _currentPlayer = player
