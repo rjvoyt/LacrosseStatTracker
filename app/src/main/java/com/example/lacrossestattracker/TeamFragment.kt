@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import com.example.lacrossestattracker.databinding.FragmentTeamBinding
 import androidx.fragment.app.viewModels
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -14,13 +15,13 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 class TeamFragment : Fragment() {
     private var _binding: FragmentTeamBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: LaxViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentTeamBinding.inflate(inflater, container, false)
         val rootView = binding.root
-        val viewModel: LaxViewModel by viewModels()
         var mAdapter = TeamsAdapter(viewModel.teams)
         binding.teamsRecyclerView.adapter = mAdapter
         binding.addTeamButton.setOnClickListener {
@@ -41,6 +42,7 @@ class TeamFragment : Fragment() {
                         )
                         mAdapter = TeamsAdapter(viewModel.teams)
                         binding.teamsRecyclerView.adapter = mAdapter
+                        binding.teamsText.text = viewModel.teams.size.toString()
                     } else {
                         Toast.makeText(requireContext(), R.string.must_enter, Toast.LENGTH_SHORT)
                             .show()
