@@ -39,8 +39,7 @@ class TeamFragment : Fragment() {
                                 mutableListOf<Player>()
                             )
                         )
-                        mAdapter = TeamsAdapter(viewModel.teams)
-                        binding.teamsRecyclerView.adapter = mAdapter
+                        mAdapter.notifyDataSetChanged()
                     } else {
                         Toast.makeText(requireContext(), R.string.must_enter, Toast.LENGTH_SHORT)
                             .show()

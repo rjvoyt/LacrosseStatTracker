@@ -46,8 +46,7 @@ class PlayersFragment : Fragment() {
                                         0, 0, 0, 0
                                     )
                                 )
-                                mAdapter = PlayersAdapter(viewModel.currentPlayerList)
-                                binding.playersRecyclerView.adapter = mAdapter
+                                mAdapter.notifyDataSetChanged()
                             } else {
                                 Toast.makeText(
                                     requireContext(),
