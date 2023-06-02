@@ -10,17 +10,22 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.lacrossestattracker.databinding.FragmentTeamBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class TeamFragment : Fragment() {
     private var _binding: FragmentTeamBinding? = null
     private val binding get() = _binding!!
     private val viewModel: LaxViewModel by activityViewModels()
+    lateinit var dbRef: DatabaseReference
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentTeamBinding.inflate(inflater, container, false)
         val rootView = binding.root
+        dbRef = Firebase.database.reference
         var mAdapter = TeamsAdapter(viewModel.teams)
         binding.teamsRecyclerView.adapter = mAdapter
         binding.addTeamButton.setOnClickListener {

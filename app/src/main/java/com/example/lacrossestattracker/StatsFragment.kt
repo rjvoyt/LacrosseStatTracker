@@ -7,18 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.lacrossestattracker.databinding.FragmentStatsBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 
 class StatsFragment : Fragment() {
     private var _binding: FragmentStatsBinding? = null
     private val binding get() = _binding!!
     private val viewModel: LaxViewModel by activityViewModels()
+    lateinit var dbRef: DatabaseReference
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentStatsBinding.inflate(inflater, container, false)
         val rootView = binding.root
+        dbRef = Firebase.database.reference
         val args = StatsFragmentArgs.fromBundle(requireArguments())
         viewModel.setCurrentPlayer(viewModel.currentTeam.players[args.position])
         binding.assistsNum.text = viewModel.currentPlayerAssists.toString()

@@ -10,17 +10,22 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.lacrossestattracker.databinding.FragmentPlayersBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class PlayersFragment : Fragment() {
     private var _binding: FragmentPlayersBinding? = null
     private val binding get() = _binding!!
     private val viewModel: LaxViewModel by activityViewModels()
+    lateinit var dbRef: DatabaseReference
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentPlayersBinding.inflate(inflater, container, false)
         val rootView = binding.root
+        dbRef = Firebase.database.reference
         val args = PlayersFragmentArgs.fromBundle(requireArguments())
         viewModel.setCurrentTeam(viewModel.teams[args.position])
         var mAdapter = PlayersAdapter(viewModel.currentPlayerList)
