@@ -10,19 +10,11 @@ class LaxViewModel : ViewModel() {
     private lateinit var _currentTeam: Team
     val currentTeam: Team
         get() = _currentTeam
-    val currentTeamName: String
-        get() = _currentTeam.teamName
     val currentPlayerList: MutableList<Player>
         get() = _currentTeam.players
     private lateinit var _currentPlayer: Player
     val currentPlayer: Player
         get() = _currentPlayer
-    val currentPlayerFirstName: String
-        get() = _currentPlayer.firstName
-    val currentPlayerLastName: String
-        get() = _currentPlayer.lastName
-    val currentPlayerNumber: Int
-        get() = _currentPlayer.number
     val currentPlayerGoals: Int
         get() = _currentPlayer.goals
     val currentPlayerGroundBalls: Int
@@ -38,16 +30,16 @@ class LaxViewModel : ViewModel() {
         _currentTeam.players.add(player)
     }
     fun editGoal(edit:Int){
-        _currentTeam.players[_currentTeam.players.indexOf(_currentPlayer)].goals+= edit
+        currentPlayer.goals+= edit
     }
     fun editAssist(edit:Int){
-        _currentTeam.players[_currentTeam.players.indexOf(_currentPlayer)].assists+= edit
+        currentPlayer.assists+= edit
     }
     fun editGroundBall(edit:Int){
-        _currentTeam.players[_currentTeam.players.indexOf(_currentPlayer)].groundBalls+= edit
+        currentPlayer.groundBalls+= edit
     }
     fun editSave(edit:Int){
-        _currentTeam.players[_currentTeam.players.indexOf(_currentPlayer)].saves+= edit
+        currentPlayer.saves+= edit
     }
     fun setCurrentTeam(team: Team){
         _currentTeam = team
